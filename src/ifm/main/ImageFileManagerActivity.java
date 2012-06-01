@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
@@ -21,6 +23,9 @@ public class ImageFileManagerActivity extends ListActivity {
 	// Root
 	static String rootPath;
 
+	// Stored path
+	private String storedPath = null;
+	
 	// ListAdapter adapter
 //	ListAdapter adapter;
 //	static ArrayAdapter adapter;
@@ -230,6 +235,8 @@ public class ImageFileManagerActivity extends ListActivity {
 		
 		// Notify the adapter
 		adapter.notifyDataSetChanged();
+		
+		
 	}
 
 	private List<String> getFileList(File new_file) {
@@ -258,4 +265,61 @@ public class ImageFileManagerActivity extends ListActivity {
 		return fileNameList;
 	}//protected void onListItemClick(ListView l, View v, int position, long id)
 
+
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        
+        // メニューアイテム1の追加
+        @SuppressWarnings("unused")
+		MenuItem item1=menu.add(0,0,0,
+				this.getResources().getString(R.string.v2_2_MI_store_path));
+        item1.setIcon(android.R.drawable.ic_menu_save);
+        
+        // メニューアイテム2の追加
+//        MenuItem item2=menu.add(0,1,0,"item2");
+        MenuItem item2=menu.add(0,1,0,
+        		this.getResources().getString(R.string.v2_2_MI_get_path));
+        item2.setIcon(android.R.drawable.ic_menu_set_as);
+//        item2.setIcon(android.R.drawable.ic_menu_search);
+        
+        // メニューアイテム3の追加
+        MenuItem item3=menu.add(0,2,0,"item3");
+        item3.setIcon(android.R.drawable.ic_menu_save);
+		
+        return true;
+	}//public boolean onCreateOptionsMenu(Menu menu)
+
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+            	// Set path
+            	storedPath = rootPath;
+            return true;
+            
+            case 1:
+            	/*----------------------------
+				 * Retrieve path
+					----------------------------*/
+				// storedPath => not null ?
+            	if (storedPath == null) {
+					// debug
+					Toast.makeText(ImageFileManagerActivity.this, "Sorry, storedPath is not set",
+							Toast.LENGTH_SHORT).show();
+					return true;
+				}//if (storedPath == null)
+            	
+            	// Get storedPath
+            	rootPath = storedPath;
+            	
+            	// Refresh list
+            	refreshList();
+            	
+        	return true;
+        	
+        }//switch (item.getItemId())
+		return true;
+    }//public boolean onOptionsItemSelected(MenuItem item)
+    
 }//class ImageFileManagerActivity

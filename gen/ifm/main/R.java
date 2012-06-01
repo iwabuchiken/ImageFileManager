@@ -59,6 +59,8 @@ public final class R {
         /**  v1 
          */
         public static final int v1_TV_header=0x7f050002;
+        public static final int v2_2_MI_get_path=0x7f05000b;
+        public static final int v2_2_MI_store_path=0x7f05000a;
         /**  /v1 
  v2 
          */

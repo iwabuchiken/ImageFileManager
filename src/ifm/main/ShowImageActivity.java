@@ -6,6 +6,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -128,6 +130,35 @@ public class ShowImageActivity extends Activity {
 		
 	}//private void showDebugMessage(String message)
 
+
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        
+        // メニューアイテム1の追加
+        @SuppressWarnings("unused")
+		MenuItem item1=menu.add(0,0,0,"item1");
+        
+        // メニューアイテム2の追加
+        MenuItem item2=menu.add(0,1,0,"item2");
+        item2.setIcon(android.R.drawable.ic_menu_search);
+        
+        // メニューアイテム3の追加
+        MenuItem item3=menu.add(0,2,0,"item3");
+        item3.setIcon(android.R.drawable.ic_menu_save);
+		
+        return true;
+	}//public boolean onCreateOptionsMenu(Menu menu)
+
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+    
+                return true;
+        }//switch (item.getItemId())
+		return true;
+    }//public boolean onOptionsItemSelected(MenuItem item)
 
 	class ShowToast {
 		// Activity activity
