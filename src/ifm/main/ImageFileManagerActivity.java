@@ -275,6 +275,11 @@ public class ImageFileManagerActivity extends ListActivity {
 //			fileNameList.add(file.getName());
 		}//for (File file : list)
 		
+		//debug
+		String item = fileNameList.get(0);
+		
+		showDebugMessage(item + "[" + Thread.currentThread().getStackTrace()[2].getLineNumber() + "]");
+		
 		return fileNameList;
 	}//protected void onListItemClick(ListView l, View v, int position, long id)
 

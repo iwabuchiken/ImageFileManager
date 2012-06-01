@@ -66,7 +66,7 @@ public class Utils {
 	 * enums
 	 *********************************/
 	enum TagNames {
-		V1_UP, V2_BACK, V2_BT_2
+		V1_UP, V2_BACK, V2_BT_2, V2_FORWARD, V2_RETURN
 	}//enum TagName
 
 	/*----------------------------

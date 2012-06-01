@@ -72,9 +72,14 @@ public class ShowImageActivity extends Activity {
 		this.setListener(this, "imagebutton", Utils.TagNames.V2_BACK, R.id.v2_2_IB_back);
 		
 		/*----------------------------
-		 * Set listener => Button 2
+		 * Set listener => Forward
 			----------------------------*/
-		this.setListener(this, "imagebutton", Utils.TagNames.V2_BT_2, R.id.v2_2_IB_forward);
+		this.setListener(this, "imagebutton", Utils.TagNames.V2_FORWARD, R.id.v2_2_IB_forward);
+
+		/*----------------------------
+		 * Set listener => Return
+			----------------------------*/
+		this.setListener(this, "imagebutton", Utils.TagNames.V2_RETURN, R.id.v2_2_IB_return);
 
 		/*----------------------------
 		 * Show image
@@ -265,22 +270,25 @@ public class ShowImageActivity extends Activity {
 							+ "["
 							+ Thread.currentThread().getStackTrace()[2]
 									.getLineNumber() + "]", "V2_BACK");
-//					ShowImageActivity.this.finish();
-//					activity.finish();
+////					ShowImageActivity.this.finish();
+////					activity.finish();
+//					finish();
+//					
+//					break;
+				
+				case V2_FORWARD:
+//					int[] size = Utils.getScreenSize(activity);
+//					
+//					String message = "size[0] => " + String.valueOf(size[0]) + "\n" +
+//										"size[0] => " + String.valueOf(size[1]);
+//					
+//					showDebugMessage(message);
+//					
+					break;
+				case V2_RETURN:
 					finish();
 					
 					break;
-				
-				case V2_BT_2:
-					int[] size = Utils.getScreenSize(activity);
-					
-					String message = "size[0] => " + String.valueOf(size[0]) + "\n" +
-										"size[0] => " + String.valueOf(size[1]);
-					
-					showDebugMessage(message);
-					
-					break;
-					
 				default:
 					break;
 			}//switch (tagName)
