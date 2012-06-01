@@ -1,5 +1,7 @@
 package ifm.main;
 
+import java.io.File;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -50,10 +52,17 @@ public class ShowImageActivity extends Activity {
 			----------------------------*/
 		Intent intent = getIntent();
 		
-		String fileAbsolutePath = intent.getStringExtra("fileAbsolutePath");
+//		String fileAbsolutePath = intent.getStringExtra("fileAbsolutePath");
+		File targetFile = (File) intent.getSerializableExtra("targetFile");
+		
+		// Get path
+//		String fileName = targetFile.getName();
+//		String fileAbsolutePath = intent.getStringExtra("fileAbsolutePath");
 		
 		// Set message
-		Utils.setMessage(this, R.id.v2_2_TV_message, fileAbsolutePath);
+//		Utils.setMessage(this, R.id.v2_2_TV_message, fileAbsolutePath);
+//		Utils.setMessage(this, R.id.v2_2_TV_message, fileName);
+		Utils.setMessage(this, R.id.v2_2_TV_message, targetFile.getName());
 		
 		
 		/*----------------------------
@@ -69,9 +78,9 @@ public class ShowImageActivity extends Activity {
 		/*----------------------------
 		 * Show image
 			----------------------------*/
-		showImage(fileAbsolutePath);
-		
-	}
+//		showImage(fileAbsolutePath);
+		showImage(targetFile.getAbsolutePath());
+	}//private void try1()
 
 	private void showImage(String fileAbsolutePath) {
 		// 
