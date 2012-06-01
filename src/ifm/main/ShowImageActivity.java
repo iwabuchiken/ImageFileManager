@@ -2,11 +2,14 @@ package ifm.main;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,10 +47,10 @@ public class ShowImageActivity extends Activity {
 			----------------------------*/
 		Intent intent = getIntent();
 		
-		String filePath = intent.getStringExtra("filePath");
+		String fileAbsolutePath = intent.getStringExtra("fileAbsolutePath");
 		
 		// Set message
-		Utils.setMessage(this, R.id.v2_TV_message, filePath);
+		Utils.setMessage(this, R.id.v2_TV_message, fileAbsolutePath);
 		
 		
 		/*----------------------------
@@ -55,7 +58,19 @@ public class ShowImageActivity extends Activity {
 			----------------------------*/
 		this.setListener(this, "button", Utils.TagNames.V2_BACK, R.id.v2_BT_back);
 		
+		showImage(fileAbsolutePath);
 
+	}
+
+	private void showImage(String fileAbsolutePath) {
+		// 
+		Bitmap bm = BitmapFactory.decodeFile(fileAbsolutePath);
+		
+		// ImageView
+		ImageView iv = (ImageView) findViewById(R.id.v2_IV_image);
+		
+		// Set image
+		iv.setImageBitmap(bm);
 	}
 
 	public void setListener(Activity activity, String viewName, 
@@ -175,7 +190,8 @@ public class ShowImageActivity extends Activity {
 							+ Thread.currentThread().getStackTrace()[2]
 									.getLineNumber() + "]", "V2_BACK");
 //					ShowImageActivity.this.finish();
-					activity.finish();
+//					activity.finish();
+					finish();
 					
 					break;
 					
