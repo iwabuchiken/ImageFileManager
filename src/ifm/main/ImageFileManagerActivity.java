@@ -67,25 +67,13 @@ public class ImageFileManagerActivity extends ListActivity {
 		
 		// Sort
 		Collections.sort(fileNameList);
-		
-//		// Name list
-//		for (File file : list) {
-//			fileNameList.add(file.getName());
-//		}//for (File file : list)
-		
+
 		// Adapter
-//		ListAdapter adapter = new ArrayAdapter<String>(this
 		adapter = new ArrayAdapter<String>(this
                 ,android.R.layout.simple_list_item_1
                 ,fileNameList);
 
-		// ListView
-//		ListView lv = (ListView) findViewById(R.id.v1_LV_file_list);
-//		ListView lv = (ListView) findViewById(R.id.);
-		
 		// Set adapter
-//		lv.setAdapter(adapter);
-//		lv.setListAdapter(adapter);
 		setListAdapter(adapter);
 		
 		// Set listener to the button
@@ -121,20 +109,12 @@ public class ImageFileManagerActivity extends ListActivity {
     		// Notify the adapter
     		adapter.notifyDataSetChanged();
     		
-//    		// New file list
-//    		List<String> fileNameList = this.getFileList(new_file);
-//    		
-//    		// Reset adapter
-//			this.resetAdapter(fileNameList);
-			
 			// Update the root path
 			rootPath = new_file.getAbsolutePath();
-			
-			//debug
-//			String message = "rootPath => " + rootPath + "\n" +
-//									"Absolute path => " + ;
+
+			// Show message
 			this.showDebugMessage("rootPath => " + rootPath);
-//			this.showDebugMessage(message);
+
     	} else if (new_file.isFile()){//if (new_file.isDirectory())
     		this.showBitmapImage(new_file);
     		//

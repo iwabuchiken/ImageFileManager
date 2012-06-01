@@ -27,7 +27,7 @@ public class ShowImageActivity extends Activity {
 
         try1();	// 
 
-        try1();	// Get the number of files
+//        try1();	// Get the number of files
 
         
     }//void onCreate(Bundle savedInstanceState)
