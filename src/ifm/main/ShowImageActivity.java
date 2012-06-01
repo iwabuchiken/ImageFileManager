@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 public class ShowImageActivity extends Activity {
 
-
 	// Utils
 	Utils util;
 
@@ -39,13 +38,13 @@ public class ShowImageActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.v2);
+
         setContentView(R.layout.v2_2);
         
 
         try1();	// 
 
-//        try1();	// Get the number of files
+
 
         
     }//void onCreate(Bundle savedInstanceState)
@@ -62,7 +61,7 @@ public class ShowImageActivity extends Activity {
 			----------------------------*/
 		Intent intent = getIntent();
 		
-//		String fileAbsolutePath = intent.getStringExtra("fileAbsolutePath");
+
 		File targetFile = (File) intent.getSerializableExtra("targetFile");
 		
 		// Root path
@@ -72,14 +71,14 @@ public class ShowImageActivity extends Activity {
 		 * Prepare data
 			----------------------------*/
 		// Set fileNameList
-//		File[] files = new File(rootPath).listFiles();
+
 		files = new File(rootPath).listFiles();
 		
 		// Set the max number
 		numOfFiles = files.length;
 		
 		// 
-//		List<String> fileNameList = getFileList(new File(rootPath));
+
 		List<String> fileNameList = getFileList(new File(rootPath));
 		
 		// Get the index of targetFile
@@ -88,18 +87,13 @@ public class ShowImageActivity extends Activity {
 		// Set current index
 		currentFileIndex = targetFileIndex;
 		
-//		// debug
-//		Toast.makeText(ShowImageActivity.this, 
-//						"targetFileIndex => " + String.valueOf(targetFileIndex), 
-//						Toast.LENGTH_SHORT).show();
+
 		
 		// Get path
-//		String fileName = targetFile.getName();
-//		String fileAbsolutePath = intent.getStringExtra("fileAbsolutePath");
+
 		
 		// Set message
-//		Utils.setMessage(this, R.id.v2_2_TV_message, fileAbsolutePath);
-//		Utils.setMessage(this, R.id.v2_2_TV_message, fileName);
+
 		Utils.setMessage(this, R.id.v2_2_TV_message, targetFile.getName());
 		
 		
@@ -121,7 +115,7 @@ public class ShowImageActivity extends Activity {
 		/*----------------------------
 		 * Show image
 			----------------------------*/
-//		showImage(fileAbsolutePath);
+
 		showImage(targetFile.getAbsolutePath());
 	}//private void try1()
 
@@ -176,10 +170,8 @@ public class ShowImageActivity extends Activity {
 			// Set a listener
 			ib.setOnClickListener(new V2_ButtonClickListener(activity));
 		}//if (viewName.equals("textview"))
-		
-		
-	}//private void setLister(String viewName, int resourceId)
 
+	}//private void setLister(String viewName, int resourceId)
 
 	public void setMessage(Activity activity, int resourceId, String message) {
 		// Get view
@@ -249,13 +241,10 @@ public class ShowImageActivity extends Activity {
 				fileNameList.add("null");
 			}//if (file != null)
 			
-//			fileNameList.add(file.getName());
+
 		}//for (File file : list)
 		
-//		//debug
-//		String item = fileNameList.get(0);
-//		
-//		showDebugMessage(item + "[" + Thread.currentThread().getStackTrace()[2].getLineNumber() + "]");
+
 		
 		return fileNameList;
 	}//protected void onListItemClick(ListView l, View v, int position, long id)
@@ -299,12 +288,10 @@ public class ShowImageActivity extends Activity {
 						message,
 						Toast.LENGTH_LONG).show();
 			}//if (type == 0)
-			
-			
+
 		}
 
 	}//class ShowToast
-
 
 	class V2_ButtonClickListener implements OnClickListener {
 
@@ -342,58 +329,16 @@ public class ShowImageActivity extends Activity {
 			
 			switch (tagName) {
 				case V2_BACK:
-					// Log
-					Log.d("ShowImageActivity.java"
-							+ "["
-							+ Thread.currentThread().getStackTrace()[2]
-									.getLineNumber() + "]", "tagName => V2_BACK");
-					
-					// Log
-					Log.d("ShowImageActivity.java"
-							+ "["
-							+ Thread.currentThread().getStackTrace()[2]
-									.getLineNumber() + "]", 
-									"currentFileIndex => " + String.valueOf(currentFileIndex));
 					
 					// Index at the head?
 					if(currentFileIndex < 1)
 						return;
-					
-					// Log
-					Log.d("ShowImageActivity.java"
-								+ "["
-								+ Thread.currentThread().getStackTrace()[2].getLineNumber() + "]", 
-							"files[currentFileIndex] => " + files[currentFileIndex].getName());
-					
-					// Log
-					Log.d("ShowImageActivity.java"
-							+ "["
-							+ Thread.currentThread().getStackTrace()[2]
-									.getLineNumber() + "]", "currentFileIndex -= 1 => Starting...");
 					
 					// Modify the index
 					currentFileIndex -= 1;
 					
 					// Get the file
 					currentFile = files[currentFileIndex];
-					
-					// Log
-					Log.d("ShowImageActivity.java"
-								+ "["
-								+ Thread.currentThread().getStackTrace()[2].getLineNumber() + "]", 
-							"files[currentFileIndex] => " + files[currentFileIndex].getName());
-					
-					// Log
-					Log.d("ShowImageActivity.java"
-								+ "["
-								+ Thread.currentThread().getStackTrace()[2].getLineNumber() + "]", 
-							"currentFile => " + currentFile.getName());
-					
-					// Log
-					Log.d("ShowImageActivity.java"
-								+ "["
-								+ Thread.currentThread().getStackTrace()[2].getLineNumber() + "]", 
-							"currentFile.getAbsolutePath() => " + currentFile.getAbsolutePath());
 					
 					// Show image
 					showImage(currentFile.getAbsolutePath());
@@ -403,21 +348,10 @@ public class ShowImageActivity extends Activity {
 					
 					// Break
 					break;
-					
-//					// Log
-//					Log.d("ShowImageActivity.java"
-//							+ "["
-//							+ Thread.currentThread().getStackTrace()[2]
-//									.getLineNumber() + "]", "V2_BACK");
-////					ShowImageActivity.this.finish();
-////					activity.finish();
-//					finish();
-//					
-//					break;
 				
 				case V2_FORWARD:
 					// Index at the head?
-//					if(currentFileIndex > (numOfFiles - 1))
+
 					if(currentFileIndex >= (numOfFiles - 1))
 						return;
 					
@@ -433,14 +367,8 @@ public class ShowImageActivity extends Activity {
 					// Set the new file name
 					Utils.setMessage(activity, R.id.v2_2_TV_message, currentFile.getName());
 
-//					int[] size = Utils.getScreenSize(activity);
-//					
-//					String message = "size[0] => " + String.valueOf(size[0]) + "\n" +
-//										"size[0] => " + String.valueOf(size[1]);
-//					
-//					showDebugMessage(message);
-//					
 					break;
+					
 				case V2_RETURN:
 					finish();
 					

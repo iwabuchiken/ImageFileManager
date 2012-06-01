@@ -28,8 +28,7 @@ public class ImageFileManagerActivity extends ListActivity {
 	private String storedPath = null;
 	
 	// ListAdapter adapter
-//	ListAdapter adapter;
-//	static ArrayAdapter adapter;
+
 	static ArrayAdapter<String> adapter;
 	
 	// List<String> fileNameList
@@ -44,7 +43,7 @@ public class ImageFileManagerActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.v1);
         
-//        try1();	// Get the number of files
+
         try2();	// Get the list of the file names
         
     }//void onCreate(Bundle savedInstanceState)
@@ -73,7 +72,7 @@ public class ImageFileManagerActivity extends ListActivity {
 				+ "]", "try2() => text set");
 		
 		// List object
-//		fileNameList = new ArrayList<String>();
+
 		fileNameList = this.getFileList(mfile);
 		
 		// Sort
@@ -133,28 +132,11 @@ public class ImageFileManagerActivity extends ListActivity {
 		} else {//if (new_file.isDirectory())
 			
 			//debug
-//			this.showDebugMessage("new_file => " + new_file.getAbsolutePath());
+
 			this.showDebugMessage("absolute path => " + new_file.getAbsolutePath());
 			
 		}//if (new_file.isDirectory())
-		
-    	
-    	
-    	
-//    	// Prepare text
-//    	String message = "Position => " + String.valueOf(position) + "\n" +
-//    						"getName => " + v.getClass().getName() + "\n" +
-////    						"text => " + ((TextView)v).getText().toString();
-//							"text => " + fileName + "\n" +
-//							"Is directory? => " + String.valueOf(new_file.isDirectory());
-    	
-//    	// TextView
-//    	TextView tv_debug = (TextView) findViewById(R.id.v1_TV_debug);
-//    	
-//    	// Set text
-//    	tv_debug.setText(message);
-
-    }
+    }//protected void onListItemClick(ListView l, View v, int position, long id)
 
 	private void showBitmapImage(File targetFile) {
 		// 
@@ -167,20 +149,16 @@ public class ImageFileManagerActivity extends ListActivity {
 		intent.setClass(this, ShowImageActivity.class);
 		
 		// Set extra
-//		intent.putExtra("fileAbsolutePath", fileAbsolutePath);
+
 		intent.putExtra("targetFile", targetFile);
 		
 		// Root path
 		intent.putExtra("rootPath", rootPath);
 		
-//		// Files
-//		intent.putExtra("fileNameList", fileNameList);
-		
 		// Start
 		startActivity(intent);
 	}//private void showBitmapImage(File targetFile)
 
-//	private void showDebugMessage(String message) {
 	public void showDebugMessage(String message) {
 		// Log
 		Log.d("ImageFileManagerActivity.java" + "["
@@ -192,7 +170,7 @@ public class ImageFileManagerActivity extends ListActivity {
 				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
 				+ "]", "R.id.v1_TV_debug => " + String.valueOf(R.id.v1_TV_debug));
     	// TextView
-//    	TextView tv_debug = (TextView) findViewById(R.id.v1_TV_debug);
+
 		TextView tv_debug = (TextView) this.findViewById(R.id.v1_TV_debug);
     	
     	// Set text
@@ -211,7 +189,6 @@ public class ImageFileManagerActivity extends ListActivity {
 		
 	}//private void resetAdapter(List<String> fileNameList)
 
-//	protected static void directoryUp() {
 	protected void directoryUp() {
 		//
 		File currentFile = new File(rootPath);
@@ -224,12 +201,7 @@ public class ImageFileManagerActivity extends ListActivity {
 		} else {//if (currentFile.getParent())
 			rootPath = upDirectory;
 		}//if (currentFile.getParent())
-		
-		
-//		rootPath = currentFile.getParent();
-		
-//		//debug
-//		this.showDebugMessage("currentFile.getParent() => " + currentFile.getParent());
+
 		
 	}//protected void directoryUp()
 	
@@ -241,7 +213,7 @@ public class ImageFileManagerActivity extends ListActivity {
 		fileNameList.clear();
 		
 		fileNameList.addAll(this.getFileList(currentFile));
-//		fileNameList = this.getFileList(currentFile);
+
 		
 		// Sort
 		Collections.sort(fileNameList);
@@ -253,10 +225,7 @@ public class ImageFileManagerActivity extends ListActivity {
 		Log.d("ImageFileManagerActivity.java" + "["
 				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
 				+ "]", "rootPath");
-		
-//		// Refresh text view
-//		showDebugMessage(rootPath);
-	}
+	}//public void refreshList()
 
 	private List<String> getFileList(File new_file) {
 		// File object
@@ -277,18 +246,10 @@ public class ImageFileManagerActivity extends ListActivity {
 			} else {//if (file != null)
 				fileNameList.add("null");
 			}//if (file != null)
-			
-//			fileNameList.add(file.getName());
 		}//for (File file : list)
-		
-//		//debug
-//		String item = fileNameList.get(0);
-//		
-//		showDebugMessage(item + "[" + Thread.currentThread().getStackTrace()[2].getLineNumber() + "]");
 		
 		return fileNameList;
 	}//protected void onListItemClick(ListView l, View v, int position, long id)
-
 
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -301,11 +262,11 @@ public class ImageFileManagerActivity extends ListActivity {
         item1.setIcon(android.R.drawable.ic_menu_save);
         
         // メニューアイテム2の追加
-//        MenuItem item2=menu.add(0,1,0,"item2");
+
         MenuItem item2=menu.add(0,1,0,
         		this.getResources().getString(R.string.v2_2_MI_get_path));
         item2.setIcon(android.R.drawable.ic_menu_set_as);
-//        item2.setIcon(android.R.drawable.ic_menu_search);
+
         
         // メニューアイテム3の追加
         MenuItem item3=menu.add(0,2,0,"item3");
