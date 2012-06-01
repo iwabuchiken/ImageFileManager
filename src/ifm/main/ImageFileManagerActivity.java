@@ -170,6 +170,12 @@ public class ImageFileManagerActivity extends ListActivity {
 //		intent.putExtra("fileAbsolutePath", fileAbsolutePath);
 		intent.putExtra("targetFile", targetFile);
 		
+		// Root path
+		intent.putExtra("rootPath", rootPath);
+		
+//		// Files
+//		intent.putExtra("fileNameList", fileNameList);
+		
 		// Start
 		startActivity(intent);
 	}//private void showBitmapImage(File targetFile)
@@ -275,10 +281,10 @@ public class ImageFileManagerActivity extends ListActivity {
 //			fileNameList.add(file.getName());
 		}//for (File file : list)
 		
-		//debug
-		String item = fileNameList.get(0);
-		
-		showDebugMessage(item + "[" + Thread.currentThread().getStackTrace()[2].getLineNumber() + "]");
+//		//debug
+//		String item = fileNameList.get(0);
+//		
+//		showDebugMessage(item + "[" + Thread.currentThread().getStackTrace()[2].getLineNumber() + "]");
 		
 		return fileNameList;
 	}//protected void onListItemClick(ListView l, View v, int position, long id)

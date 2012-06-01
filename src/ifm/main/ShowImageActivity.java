@@ -1,6 +1,8 @@
 package ifm.main;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,8 +26,15 @@ public class ShowImageActivity extends Activity {
 	// Utils
 	Utils util;
 
+	// numOfFiles
+	static int numOfFiles = -1;
 
+	// File[] files	=> Files that are in the same directory as the one intended
+	static File[] files;
 
+	// current file index
+	static int currentFileIndex;
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +64,34 @@ public class ShowImageActivity extends Activity {
 		
 //		String fileAbsolutePath = intent.getStringExtra("fileAbsolutePath");
 		File targetFile = (File) intent.getSerializableExtra("targetFile");
+		
+		// Root path
+		String rootPath = intent.getStringExtra("rootPath");
+		
+		/*----------------------------
+		 * Prepare data
+			----------------------------*/
+		// Set fileNameList
+//		File[] files = new File(rootPath).listFiles();
+		files = new File(rootPath).listFiles();
+		
+		// Set the max number
+		numOfFiles = files.length;
+		
+		// 
+//		List<String> fileNameList = getFileList(new File(rootPath));
+		List<String> fileNameList = getFileList(new File(rootPath));
+		
+		// Get the index of targetFile
+		int targetFileIndex = fileNameList.indexOf(targetFile.getName());
+		
+		// Set current index
+		currentFileIndex = targetFileIndex;
+		
+//		// debug
+//		Toast.makeText(ShowImageActivity.this, 
+//						"targetFileIndex => " + String.valueOf(targetFileIndex), 
+//						Toast.LENGTH_SHORT).show();
 		
 		// Get path
 //		String fileName = targetFile.getName();
@@ -192,6 +229,38 @@ public class ShowImageActivity extends Activity {
 		return true;
     }//public boolean onOptionsItemSelected(MenuItem item)
 
+	private List<String> getFileList(File new_file) {
+		// File object
+		File[] list= new_file.listFiles();
+		
+		// Null?
+		if (list == null) {
+			return null;
+		}//if (list == null)
+		
+		// List object
+		List<String> fileNameList = new ArrayList<String>();
+		
+		// Name list
+		for (File file : list) {
+			if (file != null) {
+				fileNameList.add(file.getName());
+			} else {//if (file != null)
+				fileNameList.add("null");
+			}//if (file != null)
+			
+//			fileNameList.add(file.getName());
+		}//for (File file : list)
+		
+//		//debug
+//		String item = fileNameList.get(0);
+//		
+//		showDebugMessage(item + "[" + Thread.currentThread().getStackTrace()[2].getLineNumber() + "]");
+		
+		return fileNameList;
+	}//protected void onListItemClick(ListView l, View v, int position, long id)
+
+	
 	class ShowToast {
 		// Activity activity
 		Activity activity;
@@ -250,18 +319,26 @@ public class ShowImageActivity extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			// Log
-			Log.d("ShowImageActivity.java" + "["
-					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
-					+ "]", "onClick");
 			/*----------------------------
 			 * 1. Get the tag
 				----------------------------*/
 			Utils.TagNames tagName = (Utils.TagNames) v.getTag(); 
 			
+			// Log
+			Log.d("ShowImageActivity.java" + "["
+					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+					+ "]", "onClick: tagName => " + tagName.name());
+			
+			// debug
+			Toast.makeText(ShowImageActivity.this, 
+								"currentFileIndex => " + String.valueOf(currentFileIndex), 
+								Toast.LENGTH_SHORT).show();
+			
 			/*----------------------------
 			 * 2. Dispatch
 				----------------------------*/
+			// Temp File
+			File currentFile;
 			
 			switch (tagName) {
 				case V2_BACK:
@@ -269,7 +346,69 @@ public class ShowImageActivity extends Activity {
 					Log.d("ShowImageActivity.java"
 							+ "["
 							+ Thread.currentThread().getStackTrace()[2]
-									.getLineNumber() + "]", "V2_BACK");
+									.getLineNumber() + "]", "tagName => V2_BACK");
+					
+					// Log
+					Log.d("ShowImageActivity.java"
+							+ "["
+							+ Thread.currentThread().getStackTrace()[2]
+									.getLineNumber() + "]", 
+									"currentFileIndex => " + String.valueOf(currentFileIndex));
+					
+					// Index at the head?
+					if(currentFileIndex < 1)
+						return;
+					
+					// Log
+					Log.d("ShowImageActivity.java"
+								+ "["
+								+ Thread.currentThread().getStackTrace()[2].getLineNumber() + "]", 
+							"files[currentFileIndex] => " + files[currentFileIndex].getName());
+					
+					// Log
+					Log.d("ShowImageActivity.java"
+							+ "["
+							+ Thread.currentThread().getStackTrace()[2]
+									.getLineNumber() + "]", "currentFileIndex -= 1 => Starting...");
+					
+					// Modify the index
+					currentFileIndex -= 1;
+					
+					// Get the file
+					currentFile = files[currentFileIndex];
+					
+					// Log
+					Log.d("ShowImageActivity.java"
+								+ "["
+								+ Thread.currentThread().getStackTrace()[2].getLineNumber() + "]", 
+							"files[currentFileIndex] => " + files[currentFileIndex].getName());
+					
+					// Log
+					Log.d("ShowImageActivity.java"
+								+ "["
+								+ Thread.currentThread().getStackTrace()[2].getLineNumber() + "]", 
+							"currentFile => " + currentFile.getName());
+					
+					// Log
+					Log.d("ShowImageActivity.java"
+								+ "["
+								+ Thread.currentThread().getStackTrace()[2].getLineNumber() + "]", 
+							"currentFile.getAbsolutePath() => " + currentFile.getAbsolutePath());
+					
+					// Show image
+					showImage(currentFile.getAbsolutePath());
+					
+					// Set the new file name
+					Utils.setMessage(activity, R.id.v2_2_TV_message, currentFile.getName());
+					
+					// Break
+					break;
+					
+//					// Log
+//					Log.d("ShowImageActivity.java"
+//							+ "["
+//							+ Thread.currentThread().getStackTrace()[2]
+//									.getLineNumber() + "]", "V2_BACK");
 ////					ShowImageActivity.this.finish();
 ////					activity.finish();
 //					finish();
@@ -277,6 +416,23 @@ public class ShowImageActivity extends Activity {
 //					break;
 				
 				case V2_FORWARD:
+					// Index at the head?
+//					if(currentFileIndex > (numOfFiles - 1))
+					if(currentFileIndex >= (numOfFiles - 1))
+						return;
+					
+					// Modify the index
+					currentFileIndex += 1;
+					
+					// Get the file
+					currentFile = files[currentFileIndex];
+					
+					// Show image
+					showImage(currentFile.getAbsolutePath());
+					
+					// Set the new file name
+					Utils.setMessage(activity, R.id.v2_2_TV_message, currentFile.getName());
+
 //					int[] size = Utils.getScreenSize(activity);
 //					
 //					String message = "size[0] => " + String.valueOf(size[0]) + "\n" +
