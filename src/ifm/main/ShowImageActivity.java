@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,12 +69,12 @@ public class ShowImageActivity extends Activity {
 		/*----------------------------
 		 * Set listener => Back
 			----------------------------*/
-		this.setListener(this, "button", Utils.TagNames.V2_BACK, R.id.v2_2_BT_back);
+		this.setListener(this, "imagebutton", Utils.TagNames.V2_BACK, R.id.v2_2_IB_back);
 		
 		/*----------------------------
 		 * Set listener => Button 2
 			----------------------------*/
-		this.setListener(this, "button", Utils.TagNames.V2_BT_2, R.id.v2_2_BT_btn_2);
+		this.setListener(this, "imagebutton", Utils.TagNames.V2_BT_2, R.id.v2_2_IB_forward);
 
 		/*----------------------------
 		 * Show image
@@ -123,6 +124,15 @@ public class ShowImageActivity extends Activity {
 			  
 			// Set a listener
 			bt.setOnClickListener(new V2_ButtonClickListener(activity));
+		} else if (viewName.equals("imagebutton")) {//if (viewName.equals("textview"))
+			// Get the view
+			ImageButton ib = (ImageButton) activity.findViewById(resourceId);
+			  
+			// Set a tag
+			ib.setTag(tagName);
+			  
+			// Set a listener
+			ib.setOnClickListener(new V2_ButtonClickListener(activity));
 		}//if (viewName.equals("textview"))
 		
 		

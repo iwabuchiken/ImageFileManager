@@ -15,6 +15,7 @@ public final class R {
         public static final int blue1=0x7f040002;
         public static final int darkgreen=0x7f040003;
         public static final int darkolivegreen4=0x7f040005;
+        public static final int gold2=0x7f040007;
         public static final int green4=0x7f040004;
         public static final int purple4=0x7f040006;
         /**  Source=http://www.somacon.com/p142.php 
@@ -23,7 +24,10 @@ public final class R {
         public static final int white=0x7f040000;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int arrow_left=0x7f020000;
+        public static final int arrow_right=0x7f020001;
+        public static final int bg_black=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
     }
     public static final class id {
         public static final int scrollView1=0x7f070008;
@@ -35,8 +39,9 @@ public final class R {
         public static final int v1_LL_debug=0x7f070006;
         public static final int v1_LL_header=0x7f070000;
         public static final int v1_TV_debug=0x7f070007;
-        public static final int v2_2_BT_back=0x7f07000f;
-        public static final int v2_2_BT_btn_2=0x7f070010;
+        public static final int v2_2_IB_back=0x7f07000f;
+        public static final int v2_2_IB_forward=0x7f070011;
+        public static final int v2_2_IB_return=0x7f070010;
         public static final int v2_2_IV_image=0x7f07000d;
         public static final int v2_2_TV_message=0x7f07000e;
         public static final int v2_BT_back=0x7f07000a;
@@ -94,6 +99,16 @@ public final class R {
  v1_TV_header 
          */
         public static final int v1_TV_header=0x7f060001;
+        /**  v2_IV_image 
+ /v2.xml 
+ v2_2.xml 
+ v2_2_IB_back 
+         */
+        public static final int v2_2_IB_back=0x7f060009;
+        /**  v2_2_IB_back 
+ v2_2_IB_return 
+         */
+        public static final int v2_2_IB_return=0x7f06000a;
         /**  v1_TV_debug 
  /v1.xml 
  v2.xml 

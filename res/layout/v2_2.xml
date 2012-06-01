@@ -43,17 +43,29 @@
         
         >
 
-        <Button
-            android:id="@+id/v2_2_BT_back"
+        <!-- image file => C:\WORKS\WORKSPACES_ANDROID\Sample\03_Techfun_jissen\Chapter6\PlaytubeSample\res\drawable -->
+        <ImageButton
+            android:id="@+id/v2_2_IB_back"
             
-            style="@style/v1_BT_btn_1"
+            style="@style/v2_2_IB_back"
             
-            android:text="@string/v2_BT_back" />
+            
+            android:src="@drawable/arrow_left" />
 
-        <Button
-            android:id="@+id/v2_2_BT_btn_2"
-            style="@style/v1_BT_btn_2"
-            android:text="@string/v2_BT_btn_2" />
+        <ImageButton
+            android:id="@+id/v2_2_IB_return"
+            
+            style="@style/v2_2_IB_return"
+            
+            android:src="@drawable/bg_black" />
+
+        <ImageButton
+            android:id="@+id/v2_2_IB_forward"
+            
+            style="@style/v2_2_IB_back"
+            
+            android:src="@drawable/arrow_right" 
+            />
     
     </LinearLayout><!-- Row 3 -->
     
