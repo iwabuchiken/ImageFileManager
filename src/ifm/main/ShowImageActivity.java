@@ -132,14 +132,14 @@ public class ShowImageActivity extends Activity {
 
 	public void setListener(Activity activity, String viewName, 
 			Utils.TagNames tagName, int resourceId) {
-		// Log
-		Log.d("ShowImageActivity.java" + "["
-				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
-				+ "]", "Setting listener...");
-		// Log
-		Log.d("ShowImageActivity.java" + "["
-				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
-				+ "]", "tagName => " + tagName.name());
+//		// Log
+//		Log.d("ShowImageActivity.java" + "["
+//				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+//				+ "]", "Setting listener...");
+//		// Log
+//		Log.d("ShowImageActivity.java" + "["
+//				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+//				+ "]", "tagName => " + tagName.name());
 		//
 		if (viewName.equals("textview")) {
 			// Get the view
@@ -310,16 +310,6 @@ public class ShowImageActivity extends Activity {
 			 * 1. Get the tag
 				----------------------------*/
 			Utils.TagNames tagName = (Utils.TagNames) v.getTag(); 
-			
-			// Log
-			Log.d("ShowImageActivity.java" + "["
-					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
-					+ "]", "onClick: tagName => " + tagName.name());
-			
-			// debug
-			Toast.makeText(ShowImageActivity.this, 
-								"currentFileIndex => " + String.valueOf(currentFileIndex), 
-								Toast.LENGTH_SHORT).show();
 			
 			/*----------------------------
 			 * 2. Dispatch

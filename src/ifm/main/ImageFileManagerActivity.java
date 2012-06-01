@@ -75,6 +75,20 @@ public class ImageFileManagerActivity extends ListActivity {
 
 		fileNameList = this.getFileList(mfile);
 		
+		// Null check
+		if (fileNameList == null) {
+			// Log
+			Log.d("ImageFileManagerActivity.java" + "["
+					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+					+ "]", "fileNameList => null");
+			
+			// debug
+			Toast.makeText(ImageFileManagerActivity.this, "fileNameList => null", Toast.LENGTH_SHORT)
+					.show();
+			
+			return;
+		}//if (fileNameList == null)
+		
 		// Sort
 		Collections.sort(fileNameList);
 
@@ -160,17 +174,17 @@ public class ImageFileManagerActivity extends ListActivity {
 	}//private void showBitmapImage(File targetFile)
 
 	public void showDebugMessage(String message) {
-		// Log
-		Log.d("ImageFileManagerActivity.java" + "["
-				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
-				+ "]", "message => " + message);
+//		// Log
+//		Log.d("ImageFileManagerActivity.java" + "["
+//				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+//				+ "]", "message => " + message);
+//		
+//		// Log
+//		Log.d("ImageFileManagerActivity.java" + "["
+//				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+//				+ "]", "R.id.v1_TV_debug => " + String.valueOf(R.id.v1_TV_debug));
 		
-		// Log
-		Log.d("ImageFileManagerActivity.java" + "["
-				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
-				+ "]", "R.id.v1_TV_debug => " + String.valueOf(R.id.v1_TV_debug));
     	// TextView
-
 		TextView tv_debug = (TextView) this.findViewById(R.id.v1_TV_debug);
     	
     	// Set text
