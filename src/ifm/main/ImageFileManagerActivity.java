@@ -117,17 +117,18 @@ public class ImageFileManagerActivity extends ListActivity {
 
     	} else if (new_file.isFile()){//if (new_file.isDirectory())
     		this.showBitmapImage(new_file);
-    		//
-    		Intent intent = new Intent();
-    		
-    		//
-    		intent.setClass(this, ShowImageActivity.class);
-    		
-    		// Put extra
-    		intent.putExtra("filePath", new_file.getAbsolutePath());
-    		
-    		// Start
-    		startActivity(intent);
+//    		//
+//    		Intent intent = new Intent();
+//    		
+//    		//
+//    		intent.setClass(this, ShowImageActivity.class);
+//    		
+//    		// Put extra
+////    		intent.putExtra("filePath", new_file.getAbsolutePath());
+//    		intent.putExtra("fileAbsolutePath", new_file.getAbsolutePath());
+//    		
+//    		// Start
+//    		startActivity(intent);
     		
 		} else {//if (new_file.isDirectory())
 			
@@ -157,7 +158,7 @@ public class ImageFileManagerActivity extends ListActivity {
 
 	private void showBitmapImage(File targetFile) {
 		// 
-		String filePath = targetFile.getAbsolutePath();
+		String fileAbsolutePath = targetFile.getAbsolutePath();
 		
 		// Intent
 		Intent intent = new Intent();
@@ -166,11 +167,11 @@ public class ImageFileManagerActivity extends ListActivity {
 		intent.setClass(this, ShowImageActivity.class);
 		
 		// Set extra
-		intent.putExtra("filePath", filePath);
+		intent.putExtra("fileAbsolutePath", fileAbsolutePath);
 		
 		// Start
 		startActivity(intent);
-	}
+	}//private void showBitmapImage(File targetFile)
 
 	private void showDebugMessage(String message) {
     	// TextView
