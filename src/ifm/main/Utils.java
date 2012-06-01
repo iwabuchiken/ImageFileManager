@@ -372,6 +372,11 @@ public class Utils {
 		 ****************************************/
 		@Override
 		public void onClick(View v) {
+			// Log
+			Log.d("Utils.java" + "["
+					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+					+ "]", "onClick");
+			
 			/*----------------------------
 			 * ImageFileManagerActivity
 				----------------------------*/
@@ -381,12 +386,22 @@ public class Utils {
 				----------------------------*/
 			Utils.TagNames tagName = (Utils.TagNames) v.getTag(); 
 			
+			// Log
+			Log.d("Utils.java" + "["
+					+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+					+ "]", "tagName => " + tagName.name());
+			
 			/*----------------------------
 			 * 2. Dispatch
 				----------------------------*/
 			
 			switch (tagName) {
 				case V1_UP:
+					// Log
+					Log.d("Utils.java"
+							+ "["
+							+ Thread.currentThread().getStackTrace()[2]
+									.getLineNumber() + "]", "switch => " + tagName.name());
 					// ShowToast
 					ShowToast ST = new ShowToast(activity);
 					

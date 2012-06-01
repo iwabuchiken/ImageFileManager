@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -65,6 +66,11 @@ public class ImageFileManagerActivity extends ListActivity {
 		
 		// Set text
 		tv_debug.setText("rootPath => " + rootPath);
+		
+		// Log
+		Log.d("ImageFileManagerActivity.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", "try2() => text set");
 		
 		// List object
 //		fileNameList = new ArrayList<String>();
@@ -178,9 +184,20 @@ public class ImageFileManagerActivity extends ListActivity {
 		startActivity(intent);
 	}//private void showBitmapImage(File targetFile)
 
-	private void showDebugMessage(String message) {
+//	private void showDebugMessage(String message) {
+	public void showDebugMessage(String message) {
+		// Log
+		Log.d("ImageFileManagerActivity.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", "message => " + message);
+		
+		// Log
+		Log.d("ImageFileManagerActivity.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", "R.id.v1_TV_debug => " + String.valueOf(R.id.v1_TV_debug));
     	// TextView
-    	TextView tv_debug = (TextView) findViewById(R.id.v1_TV_debug);
+//    	TextView tv_debug = (TextView) findViewById(R.id.v1_TV_debug);
+		TextView tv_debug = (TextView) this.findViewById(R.id.v1_TV_debug);
     	
     	// Set text
     	tv_debug.setText(message);
@@ -236,7 +253,13 @@ public class ImageFileManagerActivity extends ListActivity {
 		// Notify the adapter
 		adapter.notifyDataSetChanged();
 		
+		// Log
+		Log.d("ImageFileManagerActivity.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", "rootPath");
 		
+//		// Refresh text view
+//		showDebugMessage(rootPath);
 	}
 
 	private List<String> getFileList(File new_file) {
@@ -296,6 +319,10 @@ public class ImageFileManagerActivity extends ListActivity {
             case 0:
             	// Set path
             	storedPath = rootPath;
+            	
+            	// debug
+				Toast.makeText(ImageFileManagerActivity.this, "Path stored => " + storedPath,
+						Toast.LENGTH_SHORT).show();
             return true;
             
             case 1:
@@ -315,6 +342,8 @@ public class ImageFileManagerActivity extends ListActivity {
             	
             	// Refresh list
             	refreshList();
+            	
+            	showDebugMessage(rootPath);
             	
         	return true;
         	
