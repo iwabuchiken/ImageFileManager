@@ -35,10 +35,10 @@ public final class R {
         public static final int v1_LL_debug=0x7f070006;
         public static final int v1_LL_header=0x7f070000;
         public static final int v1_TV_debug=0x7f070007;
-        public static final int v2_2_BT_back=0x7f07000e;
-        public static final int v2_2_BT_btn_2=0x7f07000f;
+        public static final int v2_2_BT_back=0x7f07000f;
+        public static final int v2_2_BT_btn_2=0x7f070010;
         public static final int v2_2_IV_image=0x7f07000d;
-        public static final int v2_2_TV_message=0x7f070010;
+        public static final int v2_2_TV_message=0x7f07000e;
         public static final int v2_BT_back=0x7f07000a;
         public static final int v2_BT_btn_2=0x7f07000b;
         public static final int v2_IV_image=0x7f070009;

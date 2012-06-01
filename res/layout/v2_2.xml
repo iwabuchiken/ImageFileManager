@@ -26,6 +26,18 @@
     </LinearLayout><!-- Row 1 -->
 
     <!-- Row 2 -->
+
+    <LinearLayout
+        style="@style/v1_LL_header"
+        android:layout_width="match_parent" >
+
+        <TextView
+            android:id="@+id/v2_2_TV_message"
+            style="@style/v1_TV_debug"
+            android:text="@string/v2_TV_message" />
+    </LinearLayout>
+
+    <!-- Row 3 -->
     <LinearLayout
         style="@style/v1_LL_header"
         
@@ -43,16 +55,7 @@
             style="@style/v1_BT_btn_2"
             android:text="@string/v2_BT_btn_2" />
     
-    </LinearLayout><!-- Row 2 -->
+    </LinearLayout><!-- Row 3 -->
     
-	<!-- Row 3 -->
-    <LinearLayout
-        style="@style/v1_LL_header"
-        android:layout_width="match_parent" >
-
-        <TextView
-            android:id="@+id/v2_2_TV_message"
-            style="@style/v1_TV_debug"
-            android:text="@string/v2_TV_message" />
-    </LinearLayout>
+	
 </LinearLayout>

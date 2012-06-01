@@ -86,6 +86,14 @@ public class ShowImageActivity extends Activity {
 
 	public void setListener(Activity activity, String viewName, 
 			Utils.TagNames tagName, int resourceId) {
+		// Log
+		Log.d("ShowImageActivity.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", "Setting listener...");
+		// Log
+		Log.d("ShowImageActivity.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", "tagName => " + tagName.name());
 		//
 		if (viewName.equals("textview")) {
 			// Get the view
