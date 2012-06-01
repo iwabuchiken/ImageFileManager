@@ -25,7 +25,8 @@ public class ShowImageActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.v2);
+//        setContentView(R.layout.v2);
+        setContentView(R.layout.v2_2);
         
 
         try1();	// 
@@ -50,16 +51,24 @@ public class ShowImageActivity extends Activity {
 		String fileAbsolutePath = intent.getStringExtra("fileAbsolutePath");
 		
 		// Set message
-		Utils.setMessage(this, R.id.v2_TV_message, fileAbsolutePath);
+		Utils.setMessage(this, R.id.v2_2_TV_message, fileAbsolutePath);
 		
 		
 		/*----------------------------
 		 * Set listener => Back
 			----------------------------*/
-		this.setListener(this, "button", Utils.TagNames.V2_BACK, R.id.v2_BT_back);
+		this.setListener(this, "button", Utils.TagNames.V2_BACK, R.id.v2_2_BT_back);
 		
-		showImage(fileAbsolutePath);
+		/*----------------------------
+		 * Set listener => Button 2
+			----------------------------*/
+		this.setListener(this, "button", Utils.TagNames.V2_BT_2, R.id.v2_2_BT_btn_2);
 
+		/*----------------------------
+		 * Show image
+			----------------------------*/
+		showImage(fileAbsolutePath);
+		
 	}
 
 	private void showImage(String fileAbsolutePath) {
@@ -67,7 +76,7 @@ public class ShowImageActivity extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(fileAbsolutePath);
 		
 		// ImageView
-		ImageView iv = (ImageView) findViewById(R.id.v2_IV_image);
+		ImageView iv = (ImageView) findViewById(R.id.v2_2_IV_image);
 		
 		// Set image
 		iv.setImageBitmap(bm);
@@ -109,6 +118,15 @@ public class ShowImageActivity extends Activity {
 		tv.setText(message);
 
 	}//public static void setMessage(Activity activity, int resourceId, String message)
+
+	private void showDebugMessage(String message) {
+    	// TextView
+    	TextView tv_debug = (TextView) findViewById(R.id.v2_2_TV_message);
+    	
+    	// Set text
+    	tv_debug.setText(message);
+		
+	}//private void showDebugMessage(String message)
 
 
 	class ShowToast {
@@ -192,6 +210,16 @@ public class ShowImageActivity extends Activity {
 //					ShowImageActivity.this.finish();
 //					activity.finish();
 					finish();
+					
+					break;
+				
+				case V2_BT_2:
+					int[] size = Utils.getScreenSize(activity);
+					
+					String message = "size[0] => " + String.valueOf(size[0]) + "\n" +
+										"size[0] => " + String.valueOf(size[1]);
+					
+					showDebugMessage(message);
 					
 					break;
 					
