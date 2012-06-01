@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- v1.xml -->
+	<!-- v1_LL_header -->
+	<style name="v1_LL_header">
+	    <item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center</item>
+		
+	</style><!-- v1_LL_header -->
+
+	<!-- v1_TV_header -->
+   <style name="v1_TV_header">
+	    <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		
+		<item name="android:layout_gravity">center</item>
+		
+		<item name="android:gravity">center</item>
+		
+		<item name="android:background">@color/darkgreen</item>
+		<item name="android:textColor">@color/white</item>
+		
+		<item name="android:layout_marginTop">5dp</item>
+		<item name="android:layout_marginBottom">5dp</item>
+		<item name="android:layout_marginLeft">0dp</item>
+		<item name="android:layout_marginRight">0dp</item>
+		
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:paddingRight">5dp</item>
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:paddingBottom">10dp</item>
+		
+		<item name="android:textSize">25dp</item>
+		
+	</style><!-- v1_TV_header -->
+
+	<style name="v1_BT_up">
+	    <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		
+		<item name="android:layout_gravity">center</item>
+		
+		<item name="android:gravity">center</item>
+		
+		<item name="android:background">@color/blue1</item>
+		<item name="android:textColor">@color/white</item>
+		
+		<item name="android:layout_marginTop">10dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:layout_marginLeft">20dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+		
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:paddingRight">5dp</item>
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:paddingBottom">10dp</item>
+		
+		<item name="android:textSize">25dp</item>
+	</style>
+		<!-- v1_BT_up -->
+
+	
+	<!-- v1_LV_file_list -->
+   <style name="v1_LV_file_list">
+       
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">300dp</item>
+		
+		<item name="android:background">@color/black</item>
+		
+	</style><!-- v1_LV_file_list -->
+		
+   <style name="v1_BT_btn_1">
+	    <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		
+		<item name="android:layout_gravity">center</item>
+		
+		<item name="android:gravity">center</item>
+		
+		<item name="android:background">@color/blue1</item>
+		<item name="android:textColor">@color/white</item>
+		
+		<item name="android:layout_marginTop">10dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:layout_marginLeft">20dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+		
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:paddingRight">5dp</item>
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:paddingBottom">10dp</item>
+		
+		<item name="android:textSize">25dp</item>
+	</style>
+		<!-- v1_BT_btn_1 -->
+   
+	<style name="v1_BT_btn_2">
+	    <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		
+		<item name="android:layout_gravity">center</item>
+		
+		<item name="android:gravity">center</item>
+		
+		<item name="android:background">@color/blue1</item>
+		<item name="android:textColor">@color/white</item>
+		
+		<item name="android:layout_marginTop">10dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_marginRight">20dp</item>
+		
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:paddingRight">5dp</item>
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:paddingBottom">10dp</item>
+		
+		<item name="android:textSize">25dp</item>		
+	</style><!-- v1_BT_btn_2 -->
+	
+	<!-- v1_TV_debug -->
+	<style name="v1_TV_debug">
+	    <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		
+		<item name="android:textSize">20dp</item>
+	</style><!-- v1_TV_debug -->
+	
+<!-- /v1.xml -->
+
+<!-- v2.xml -->
+		<style name="v2_BT_back">
+	    <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		
+		<item name="android:layout_gravity">center</item>
+		
+		<item name="android:gravity">center</item>
+		
+		<item name="android:background">@color/blue1</item>
+		<item name="android:textColor">@color/white</item>
+		
+		<item name="android:layout_marginTop">10dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:layout_marginLeft">20dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+		
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:paddingRight">5dp</item>
+		<item name="android:paddingTop">10dp</item>
+		<item name="android:paddingBottom">10dp</item>
+		
+		<item name="android:textSize">25dp</item>
+	</style>
+	
+	<!-- v2_IV_image -->
+	<style name="v2_IV_image">
+	    <item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		
+		<item name="android:layout_gravity">center</item>
+		
+		<item name="android:gravity">center</item>
+    </style><!-- v2_IV_image -->
+    
+<!-- /v2.xml -->
+
+</resources>

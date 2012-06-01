@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, ImageFileManagerActivity!</string>
+    <string name="app_name">ImageFileManager</string>
+
+	<!-- v1 -->
+	<string name="v1_TV_header">ImageFileManager</string>
+	<string name="v1_BT_btn_1">Button 1</string>
+	<string name="v1_BT_btn_2">Button 2</string>
+	<string name="v1_TV_debug">Debug</string>
+	<string name="v1_BT_up">Up</string>
+	
+	
+	<!-- /v1 -->
+
+    <!-- v2 -->
+    <string name="v2_BT_back">Back</string>
+    <string name="v2_BT_btn_2">Button 2</string>
+    <string name="v2_TV_message">Message will be here...</string>
+    <!-- /v2 -->
+    
+</resources>
