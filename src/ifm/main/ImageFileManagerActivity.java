@@ -2,7 +2,9 @@ package ifm.main;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
@@ -140,6 +142,28 @@ public class ImageFileManagerActivity extends ListActivity {
 			this.showDebugMessage("rootPath => " + rootPath);
 
     	} else if (new_file.isFile()){//if (new_file.isDirectory())
+    		// debug =================================
+//			Toast.makeText(ImageFileManagerActivity.this, 
+//					"Last modified => " + new_file.lastModified(), 
+//					Toast.LENGTH_SHORT)
+//					.show();
+    		
+//    		long dateNumber = new_file.lastModified();
+//			Date date = new Date(dateNumber);
+//			Calendar cal = Calendar.getInstance();
+//			cal.setTime(date);
+//			
+//			// Month
+//			int month = cal.get(Calendar.MONTH);
+//			
+//			Toast.makeText(ImageFileManagerActivity.this, 
+//						"Last modified: Month => " + month, 
+//						Toast.LENGTH_SHORT)
+//						.show();
+			
+    		
+    		// debug ENDS =================================
+			
     		// Start intent
     		this.showBitmapImage(new_file);
     		
@@ -265,6 +289,24 @@ public class ImageFileManagerActivity extends ListActivity {
 		return fileNameList;
 	}//protected void onListItemClick(ListView l, View v, int position, long id)
 
+	private int getLastModifiedMonth(File targetFile) {
+    	// Date number
+		long dateNumber = targetFile.lastModified();
+		
+		// Date instance
+		Date date = new Date(dateNumber);
+		
+		// Calendar instance
+		Calendar cal = Calendar.getInstance();
+		
+		// Set time
+		cal.setTime(date);
+		
+		// Get month number
+		return cal.get(Calendar.MONTH);
+		
+	}//private int getLastModifiedMonth(File targetFile)
+	
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -286,6 +328,11 @@ public class ImageFileManagerActivity extends ListActivity {
         MenuItem item3=menu.add(0,2,0,"item3");
         item3.setIcon(android.R.drawable.ic_menu_save);
 		
+        // メニューアイテム4の追加
+        MenuItem item4=menu.add(0,3,0,
+        		this.getResources().getString(R.string.v2_2_MI_find_files));
+        item4.setIcon(android.R.drawable.ic_input_get);
+        
         return true;
 	}//public boolean onCreateOptionsMenu(Menu menu)
 
@@ -321,7 +368,55 @@ public class ImageFileManagerActivity extends ListActivity {
             	
             	showDebugMessage(rootPath);
             	
-        	return true;
+            	break;
+        	/*----------------------------
+			 * Find files
+				----------------------------*/
+            case 3:
+            	// Get files
+            	File file = new File(rootPath);
+            	File[] files = file.listFiles();
+            	
+            	// Temp list
+            	List<String> tempNameList = new ArrayList<String>();
+            	
+//            	fileNameList.clear();
+            	
+            	// Get file names
+            	for (File eachFile : files) {
+					long dateNumber = eachFile.lastModified();
+					Date date = new Date(dateNumber);
+					Calendar cal = Calendar.getInstance();
+					cal.setTime(date);
+					
+					// Month
+					int month = cal.get(Calendar.MONTH);
+					
+					if (month == (6 - 1)) {
+//						fileNameList.add(eachFile.getName());
+						tempNameList.add(eachFile.getName());
+					}//if (month == 6)
+				}//for (File eachFile : files)
+            	
+            	// Has any entry?
+            	if (tempNameList.size() == 0) {
+					// debug
+					Toast.makeText(ImageFileManagerActivity.this, 
+							"Last modified in 6 => No entry",
+							Toast.LENGTH_SHORT).show();
+					
+					return true;
+				}//if (fileNameList.size() == 0)
+            	
+            	// Refresh list
+            	fileNameList.clear();
+            	fileNameList.addAll(tempNameList);
+            	
+            	// Notify
+            	adapter.notifyDataSetChanged();
+            	
+            	break;
+//        	return true;
         	
         }//switch (item.getItemId())
 		return true;

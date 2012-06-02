@@ -207,7 +207,11 @@ public class ShowImageActivity extends Activity {
         // メニューアイテム3の追加
         MenuItem item3=menu.add(0,2,0,"item3");
         item3.setIcon(android.R.drawable.ic_menu_save);
-		
+
+        // メニューアイテム4の追加
+        MenuItem item4=menu.add(0,2,0,"item4");
+        item4.setIcon(android.R.drawable.ic_menu_save);
+
         return true;
 	}//public boolean onCreateOptionsMenu(Menu menu)
 
