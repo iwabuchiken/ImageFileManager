@@ -384,13 +384,8 @@ public class ImageFileManagerActivity extends ListActivity {
             	
             	// Get file names
             	for (File eachFile : files) {
-					long dateNumber = eachFile.lastModified();
-					Date date = new Date(dateNumber);
-					Calendar cal = Calendar.getInstance();
-					cal.setTime(date);
-					
 					// Month
-					int month = cal.get(Calendar.MONTH);
+					int month = getLastModifiedMonth(eachFile);
 					
 					if (month == (6 - 1)) {
 //						fileNameList.add(eachFile.getName());
