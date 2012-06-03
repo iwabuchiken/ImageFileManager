@@ -336,6 +336,11 @@ public class ImageFileManagerActivity extends ListActivity {
         		this.getResources().getString(R.string.v2_2_MI_find_files));
         item4.setIcon(android.R.drawable.ic_input_get);
         
+//        // メニューアイテム5の追加
+//        MenuItem item5=menu.add(0,4,0,
+//        		this.getResources().getString(R.string.v2_2_MI_find_files));
+//        item5.setIcon(android.R.drawable.ic_input_get);
+
         return true;
 	}//public boolean onCreateOptionsMenu(Menu menu)
 
