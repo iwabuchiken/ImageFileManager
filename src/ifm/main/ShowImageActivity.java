@@ -67,19 +67,47 @@ public class ShowImageActivity extends Activity {
 		// Root path
 		String rootPath = intent.getStringExtra("rootPath");
 		
+		// File name list
+		ArrayList<String> fileNameList = intent.getStringArrayListExtra("fileNameList");
+
+		// Log
+		Log.d("ImageFileManagerActivity.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", "Getting extra => fileNameList (size=" + fileNameList.size() + ")");
+
+//		String[] fileNames = intent.gets;
+		
+		/*----------------------------
+		 * Validate intent data
+			----------------------------*/
+//		if (fileNameList == null) {
+//			// debug
+//			Toast.makeText(ShowImageActivity.this, 
+//					"fileNameList => null!", 
+//					Toast.LENGTH_SHORT).show();
+//			
+//			return;
+//		}//if (fileNameList == null)
 		/*----------------------------
 		 * Prepare data
 			----------------------------*/
 		// Set fileNameList
 
-		files = new File(rootPath).listFiles();
+		// Initialize files[]
+		files = new File[fileNameList.size()];
+		
+		// Files
+//		files = new File(rootPath).listFiles();
+		for (int i = 0; i < fileNameList.size(); i++) {
+			files[i] = new File(rootPath, fileNameList.get(i));
+		}//for (int i = 0; i < fileNameList.size(); i++)
 		
 		// Set the max number
 		numOfFiles = files.length;
 		
 		// 
 
-		List<String> fileNameList = getFileList(new File(rootPath));
+//		List<String> fileNameList = getFileList(new File(rootPath));
 		
 		// Get the index of targetFile
 		int targetFileIndex = fileNameList.indexOf(targetFile.getName());
@@ -325,8 +353,10 @@ public class ShowImageActivity extends Activity {
 				case V2_BACK:
 					
 					// Index at the head?
-					if(currentFileIndex < 1)
+					if(currentFileIndex < 1) {
 						return;
+					}
+						
 					
 					// Modify the index
 					currentFileIndex -= 1;

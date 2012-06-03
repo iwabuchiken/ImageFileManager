@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import android.app.Activity;
@@ -142,28 +143,7 @@ public class ImageFileManagerActivity extends ListActivity {
 			this.showDebugMessage("rootPath => " + rootPath);
 
     	} else if (new_file.isFile()){//if (new_file.isDirectory())
-    		// debug =================================
-//			Toast.makeText(ImageFileManagerActivity.this, 
-//					"Last modified => " + new_file.lastModified(), 
-//					Toast.LENGTH_SHORT)
-//					.show();
-    		
-//    		long dateNumber = new_file.lastModified();
-//			Date date = new Date(dateNumber);
-//			Calendar cal = Calendar.getInstance();
-//			cal.setTime(date);
-//			
-//			// Month
-//			int month = cal.get(Calendar.MONTH);
-//			
-//			Toast.makeText(ImageFileManagerActivity.this, 
-//						"Last modified: Month => " + month, 
-//						Toast.LENGTH_SHORT)
-//						.show();
-			
-    		
-    		// debug ENDS =================================
-			
+
     		// Start intent
     		this.showBitmapImage(new_file);
     		
@@ -192,6 +172,29 @@ public class ImageFileManagerActivity extends ListActivity {
 		
 		// Root path
 		intent.putExtra("rootPath", rootPath);
+
+		/*----------------------------
+		 * File name list
+			----------------------------*/
+//		// Temp array
+//		String[] stringArray = new String[fileNameList.size()];
+//		
+//		// Copy data to the temp array
+//		for (int i = 0; i < fileNameList.size(); i++) {
+//			stringArray[i] = fileNameList.get(i);
+//		}//for (int i = 0; i < fileNameList.size(); i++)
+		
+		// Log
+		Log.d("ImageFileManagerActivity.java" + "["
+				+ Thread.currentThread().getStackTrace()[2].getLineNumber()
+				+ "]", "Putting extra => fileNameList (size=" + fileNameList.size() + ")");
+		
+		// Put extra
+		intent.putStringArrayListExtra("fileNameList", (ArrayList<String>) fileNameList);
+		
+//		intent.putExtra("fileNameList", stringArray);
+		
+//		intent.putExtra("fileNameList", fileNameList);
 		
 		// Start
 		startActivity(intent);
