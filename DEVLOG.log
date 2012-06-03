@@ -1,0 +1,151 @@
+06-03 10:35:40.309: D/dalvikvm(9566): GC_EXTERNAL_ALLOC freed 91K, 48% free 2666K/5123K, external 2741K/2773K, paused 75ms
+06-03 10:35:44.651: D/ImageFileManagerActivity.java[189](9566): Putting extra => fileNameList (size=308)
+06-03 10:35:44.728: D/dalvikvm(9566): GC_EXTERNAL_ALLOC freed 205K, 49% free 2760K/5319K, external 3444K/3549K, paused 20ms
+06-03 10:35:44.738: D/ImageFileManagerActivity.java[75](9566): Getting extra => fileNameList (size=308)
+06-03 10:35:44.738: D/AndroidRuntime(9566): Shutting down VM
+06-03 10:35:44.738: W/dalvikvm(9566): threadid=1: thread exiting with uncaught exception (group=0x4001a560)
+06-03 10:35:44.738: E/AndroidRuntime(9566): FATAL EXCEPTION: main
+06-03 10:35:44.738: E/AndroidRuntime(9566): java.lang.RuntimeException: Unable to start activity ComponentInfo{ifm.main/ifm.main.ShowImageActivity}: java.lang.NullPointerException
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1696)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:1716)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.app.ActivityThread.access$1500(ActivityThread.java:124)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:968)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.os.Looper.loop(Looper.java:130)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.app.ActivityThread.main(ActivityThread.java:3806)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at java.lang.reflect.Method.invokeNative(Native Method)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at java.lang.reflect.Method.invoke(Method.java:507)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:839)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:597)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at dalvik.system.NativeStart.main(Native Method)
+06-03 10:35:44.738: E/AndroidRuntime(9566): Caused by: java.lang.NullPointerException
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at ifm.main.ShowImageActivity.try1(ShowImageActivity.java:99)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at ifm.main.ShowImageActivity.onCreate(ShowImageActivity.java:45)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1047)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:1660)
+06-03 10:35:44.738: E/AndroidRuntime(9566): 	... 11 more
+06-03 10:37:31.598: D/ImageFileManagerActivity.java[74](9658): try2() => text set
+06-03 10:37:36.109: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 92K, 48% free 2667K/5123K, external 2741K/2773K, paused 76ms
+06-03 10:37:39.669: D/ImageFileManagerActivity.java[189](9658): Putting extra => fileNameList (size=308)
+06-03 10:37:39.759: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 207K, 49% free 2759K/5319K, external 3444K/3549K, paused 21ms
+06-03 10:37:39.769: D/ImageFileManagerActivity.java[75](9658): Getting extra => fileNameList (size=308)
+06-03 10:37:45.879: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 154K, 47% free 2839K/5319K, external 4072K/4148K, paused 51ms
+06-03 10:37:47.739: W/KeyCharacterMap(9658): Can't open keycharmap file
+06-03 10:37:47.739: W/KeyCharacterMap(9658): Error loading keycharmap file '/data/usr/keychars/qtouch-obp-ts.kcm.bin'. hw.keyboards.131072.devname='qtouch-obp-ts'
+06-03 10:37:47.752: W/KeyCharacterMap(9658): Can't open keycharmap file
+06-03 10:37:47.752: W/KeyCharacterMap(9658): Error loading keycharmap file '/system/usr/keychars/qtouch-obp-ts.kcm.bin'. hw.keyboards.131072.devname='qtouch-obp-ts'
+06-03 10:37:47.752: W/KeyCharacterMap(9658): Can't open keycharmap file
+06-03 10:37:47.752: W/KeyCharacterMap(9658): Using default keymap: /system/usr/keychars/qwerty.kcm.bin
+06-03 10:37:49.519: I/dalvikvm(9658): Total arena pages for JIT: 11
+06-03 10:37:51.831: D/ImageFileManagerActivity.java[189](9658): Putting extra => fileNameList (size=47)
+06-03 10:37:51.899: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 434K, 50% free 2790K/5575K, external 3513K/3636K, paused 22ms
+06-03 10:37:51.909: D/ImageFileManagerActivity.java[75](9658): Getting extra => fileNameList (size=47)
+06-03 10:37:51.929: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 108K, 51% free 2776K/5575K, external 3402K/4235K, paused 20ms
+06-03 10:37:55.479: D/ImageFileManagerActivity.java[189](9658): Putting extra => fileNameList (size=47)
+06-03 10:37:55.529: D/ImageFileManagerActivity.java[75](9658): Getting extra => fileNameList (size=47)
+06-03 10:37:55.549: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 114K, 50% free 2817K/5575K, external 15208K/16851K, paused 21ms
+06-03 10:37:57.539: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 65K, 50% free 2792K/5575K, external 14803K/16851K, paused 26ms
+06-03 10:38:08.559: D/ImageFileManagerActivity.java[189](9658): Putting extra => fileNameList (size=47)
+06-03 10:38:08.602: D/ImageFileManagerActivity.java[75](9658): Getting extra => fileNameList (size=47)
+06-03 10:38:08.639: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 103K, 50% free 2802K/5575K, external 27014K/28535K, paused 25ms
+06-03 10:38:08.649: E/dalvikvm-heap(9658): 11985408-byte external allocation too large for this process.
+06-03 10:38:08.649: D/GraphicsJNI(9658): Waiting for heap walker to free more memory
+06-03 10:38:08.669: D/dalvikvm(9658): GC_FOR_MALLOC freed 3K, 50% free 2798K/5575K, external 14803K/26508K, paused 14ms
+06-03 10:38:08.669: D/GraphicsJNI(9658): Heap walker done, retry to allocate
+06-03 10:38:11.609: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 61K, 51% free 2778K/5575K, external 14803K/14803K, paused 50ms
+06-03 10:38:13.129: D/dalvikvm(9658): GC_EXTERNAL_ALLOC freed 32K, 51% free 2778K/5575K, external 26487K/28535K, paused 39ms
+06-03 10:38:13.149: E/dalvikvm-heap(9658): 11985408-byte external allocation too large for this process.
+06-03 10:38:13.179: D/GraphicsJNI(9658): Waiting for heap walker to free more memory
+06-03 10:38:13.179: D/dalvikvm(9658): GC_FOR_MALLOC freed 0K, 51% free 2778K/5575K, external 26487K/28535K, paused 25ms
+06-03 10:38:13.189: D/GraphicsJNI(9658): Heap walker done, retry to allocate
+06-03 10:40:41.782: D/ImageFileManagerActivity.java[74](9873): try2() => text set
+06-03 10:40:44.619: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 94K, 48% free 2667K/5123K, external 2741K/2773K, paused 48ms
+06-03 10:40:49.949: D/ImageFileManagerActivity.java[189](9873): Putting extra => fileNameList (size=308)
+06-03 10:40:50.039: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 206K, 49% free 2759K/5319K, external 3444K/3549K, paused 20ms
+06-03 10:40:50.059: D/ImageFileManagerActivity.java[75](9873): Getting extra => fileNameList (size=308)
+06-03 10:40:52.729: D/ImageFileManagerActivity.java[189](9873): Putting extra => fileNameList (size=308)
+06-03 10:40:52.769: D/ImageFileManagerActivity.java[75](9873): Getting extra => fileNameList (size=308)
+06-03 10:40:52.799: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 320K, 48% free 2950K/5639K, external 3870K/4148K, paused 21ms
+06-03 10:40:56.459: D/ImageFileManagerActivity.java[189](9873): Putting extra => fileNameList (size=308)
+06-03 10:40:56.489: D/ImageFileManagerActivity.java[75](9873): Getting extra => fileNameList (size=308)
+06-03 10:40:56.509: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 293K, 48% free 2942K/5639K, external 4275K/4832K, paused 22ms
+06-03 10:41:02.579: W/KeyCharacterMap(9873): Can't open keycharmap file
+06-03 10:41:02.579: W/KeyCharacterMap(9873): Error loading keycharmap file '/data/usr/keychars/qtouch-obp-ts.kcm.bin'. hw.keyboards.131072.devname='qtouch-obp-ts'
+06-03 10:41:02.579: W/KeyCharacterMap(9873): Can't open keycharmap file
+06-03 10:41:02.579: W/KeyCharacterMap(9873): Error loading keycharmap file '/system/usr/keychars/qtouch-obp-ts.kcm.bin'. hw.keyboards.131072.devname='qtouch-obp-ts'
+06-03 10:41:02.579: W/KeyCharacterMap(9873): Can't open keycharmap file
+06-03 10:41:02.579: W/KeyCharacterMap(9873): Using default keymap: /system/usr/keychars/qwerty.kcm.bin
+06-03 10:41:03.569: I/dalvikvm(9873): Total arena pages for JIT: 11
+06-03 10:41:04.869: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 506K, 51% free 2829K/5703K, external 4812K/4832K, paused 58ms
+06-03 10:41:05.719: D/ImageFileManagerActivity.java[189](9873): Putting extra => fileNameList (size=47)
+06-03 10:41:05.759: D/ImageFileManagerActivity.java[75](9873): Getting extra => fileNameList (size=47)
+06-03 10:41:05.789: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 127K, 51% free 2850K/5703K, external 4377K/5061K, paused 22ms
+06-03 10:41:07.342: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 39K, 51% free 2850K/5703K, external 15676K/17724K, paused 39ms
+06-03 10:41:15.842: D/ImageFileManagerActivity.java[189](9873): Putting extra => fileNameList (size=47)
+06-03 10:41:15.892: D/ImageFileManagerActivity.java[75](9873): Getting extra => fileNameList (size=47)
+06-03 10:41:15.909: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 140K, 50% free 2864K/5703K, external 27786K/29408K, paused 21ms
+06-03 10:41:15.919: E/dalvikvm-heap(9873): 11985408-byte external allocation too large for this process.
+06-03 10:41:15.949: D/GraphicsJNI(9873): Waiting for heap walker to free more memory
+06-03 10:41:15.949: D/dalvikvm(9873): GC_FOR_MALLOC freed 3K, 50% free 2860K/5703K, external 27381K/29408K, paused 13ms
+06-03 10:41:15.949: D/GraphicsJNI(9873): Heap walker done, retry to allocate
+06-03 10:41:15.969: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed <1K, 50% free 2859K/5703K, external 15575K/17623K, paused 20ms
+06-03 10:41:18.539: D/ImageFileManagerActivity.java[189](9873): Putting extra => fileNameList (size=47)
+06-03 10:41:18.572: D/ImageFileManagerActivity.java[75](9873): Getting extra => fileNameList (size=47)
+06-03 10:41:18.592: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 131K, 50% free 2884K/5703K, external 27279K/29327K, paused 21ms
+06-03 10:41:18.599: E/dalvikvm-heap(9873): 11985408-byte external allocation too large for this process.
+06-03 10:41:18.599: D/GraphicsJNI(9873): Waiting for heap walker to free more memory
+06-03 10:41:18.619: D/dalvikvm(9873): GC_FOR_MALLOC freed 23K, 50% free 2860K/5703K, external 15575K/27279K, paused 13ms
+06-03 10:41:18.619: D/GraphicsJNI(9873): Heap walker done, retry to allocate
+06-03 10:41:19.999: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed 37K, 50% free 2864K/5703K, external 27279K/27279K, paused 32ms
+06-03 10:41:20.009: E/dalvikvm-heap(9873): 11985408-byte external allocation too large for this process.
+06-03 10:41:20.039: D/GraphicsJNI(9873): Waiting for heap walker to free more memory
+06-03 10:41:20.039: D/dalvikvm(9873): GC_FOR_MALLOC freed <1K, 50% free 2864K/5703K, external 27279K/27279K, paused 21ms
+06-03 10:41:20.039: D/GraphicsJNI(9873): Heap walker done, retry to allocate
+06-03 10:41:20.059: D/dalvikvm(9873): GC_EXTERNAL_ALLOC freed <1K, 50% free 2864K/5703K, external 27259K/27279K, paused 26ms
+06-03 10:41:20.072: E/dalvikvm-heap(9873): 11985408-byte external allocation too large for this process.
+06-03 10:41:20.099: D/dalvikvm(9873): GC_FOR_MALLOC freed 0K, 50% free 2864K/5703K, external 27259K/27279K, paused 13ms
+06-03 10:41:20.099: E/GraphicsJNI(9873): VM won't let us allocate 11985408 bytes
+06-03 10:41:20.099: D/skia(9873): --- decoder->decode returned false
+06-03 10:41:20.099: D/AndroidRuntime(9873): Shutting down VM
+06-03 10:41:20.099: W/dalvikvm(9873): threadid=1: thread exiting with uncaught exception (group=0x4001a560)
+06-03 10:41:20.109: E/AndroidRuntime(9873): FATAL EXCEPTION: main
+06-03 10:41:20.109: E/AndroidRuntime(9873): java.lang.OutOfMemoryError: bitmap size exceeds VM budget
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.graphics.BitmapFactory.nativeDecodeStream(Native Method)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.graphics.BitmapFactory.decodeStream(BitmapFactory.java:470)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.graphics.BitmapFactory.decodeFile(BitmapFactory.java:284)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.graphics.BitmapFactory.decodeFile(BitmapFactory.java:309)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at ifm.main.ShowImageActivity.showImage(ShowImageActivity.java:152)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at ifm.main.ShowImageActivity.access$0(ShowImageActivity.java:150)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at ifm.main.ShowImageActivity$V2_ButtonClickListener.onClick(ShowImageActivity.java:398)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.view.View.performClick(View.java:2485)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.view.View$PerformClick.run(View.java:9089)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.os.Handler.handleCallback(Handler.java:587)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.os.Handler.dispatchMessage(Handler.java:92)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.os.Looper.loop(Looper.java:130)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at android.app.ActivityThread.main(ActivityThread.java:3806)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at java.lang.reflect.Method.invokeNative(Native Method)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at java.lang.reflect.Method.invoke(Method.java:507)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:839)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:597)
+06-03 10:41:20.109: E/AndroidRuntime(9873): 	at dalvik.system.NativeStart.main(Native Method)
+06-03 10:41:37.309: I/Process(9873): Sending signal. PID: 9873 SIG: 9
+06-03 10:41:46.309: D/dalvikvm(10066): GC_EXTERNAL_ALLOC freed 94K, 48% free 2666K/5123K, external 2741K/2773K, paused 45ms
+06-03 10:41:51.229: W/KeyCharacterMap(10066): Can't open keycharmap file
+06-03 10:41:51.229: W/KeyCharacterMap(10066): Error loading keycharmap file '/data/usr/keychars/qtouch-obp-ts.kcm.bin'. hw.keyboards.131072.devname='qtouch-obp-ts'
+06-03 10:41:51.229: W/KeyCharacterMap(10066): Can't open keycharmap file
+06-03 10:41:51.229: W/KeyCharacterMap(10066): Error loading keycharmap file '/system/usr/keychars/qtouch-obp-ts.kcm.bin'. hw.keyboards.131072.devname='qtouch-obp-ts'
+06-03 10:41:51.229: W/KeyCharacterMap(10066): Can't open keycharmap file
+06-03 10:41:51.229: W/KeyCharacterMap(10066): Using default keymap: /system/usr/keychars/qwerty.kcm.bin
+06-03 10:41:52.049: I/dalvikvm(10066): Total arena pages for JIT: 11
+06-03 10:41:55.250: D/ImageFileManagerActivity.java[189](10066): Putting extra => fileNameList (size=47)
+06-03 10:41:55.322: D/dalvikvm(10066): GC_EXTERNAL_ALLOC freed 569K, 52% free 2746K/5639K, external 3513K/3549K, paused 23ms
+06-03 10:41:55.322: D/ImageFileManagerActivity.java[75](10066): Getting extra => fileNameList (size=47)
+06-03 10:41:55.352: D/dalvikvm(10066): GC_EXTERNAL_ALLOC freed 45K, 51% free 2773K/5639K, external 3402K/4235K, paused 20ms
+06-03 10:41:57.239: D/dalvikvm(10066): GC_EXTERNAL_ALLOC freed 36K, 51% free 2778K/5639K, external 14803K/16851K, paused 21ms
+06-03 10:41:58.859: D/dalvikvm(10066): GC_EXTERNAL_ALLOC freed 33K, 51% free 2778K/5639K, external 26487K/28535K, paused 47ms
+06-03 10:41:58.869: E/dalvikvm-heap(10066): 11985408-byte external allocation too large for this process.
+06-03 10:41:58.909: D/GraphicsJNI(10066): Waiting for heap walker to free more memory
+06-03 10:41:58.909: D/dalvikvm(10066): GC_FOR_MALLOC freed 0K, 51% free 2778K/5639K, external 26487K/28535K, paused 30ms
+06-03 10:41:58.919: D/GraphicsJNI(10066): Heap walker done, retry to allocate
+06-03 10:42:00.712: D/dalvikvm(10066): GC_EXTERNAL_ALLOC freed 32K, 52% free 2747K/5639K, external 26487K/26487K, paused 56ms
+

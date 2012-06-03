@@ -354,6 +354,9 @@ public class ShowImageActivity extends Activity {
 					
 					// Index at the head?
 					if(currentFileIndex < 1) {
+						// debug
+						Toast.makeText(ShowImageActivity.this, "No more files",
+								Toast.LENGTH_SHORT).show();
 						return;
 					}
 						
@@ -376,8 +379,14 @@ public class ShowImageActivity extends Activity {
 				case V2_FORWARD:
 					// Index at the head?
 
-					if(currentFileIndex >= (numOfFiles - 1))
+					if(currentFileIndex >= (numOfFiles - 1)) {
+						// debug
+						Toast.makeText(ShowImageActivity.this, "No more files",
+								Toast.LENGTH_SHORT).show();
 						return;
+						
+					}
+//						return;
 					
 					// Modify the index
 					currentFileIndex += 1;
